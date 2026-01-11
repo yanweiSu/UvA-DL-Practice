@@ -91,6 +91,7 @@ def expand_mask(mask):
         return mask
     raise ValueError(f"Unsupported mask shape: {tuple(mask.shape)}")
 
+
 class MultiheadAttention(nn.Module):
     def __init__(self, in_dim, emb_dim, num_heads):
         super().__init__()
@@ -779,9 +780,9 @@ def train_reverse(**kwargs):
 
 
 if __name__ == "__main__":
-    # _demo_sdp_attention()
-    # PositionalEncoding(d_model=48, max_len=96).plot()
-    # CosineWarmupScheduler.plot_lr_factor(warmup=100, max_iters=2000, base_lr=1e-3)
+    _demo_sdp_attention()
+    PositionalEncoding(d_model=48, max_len=96).plot()
+    CosineWarmupScheduler.plot_lr_factor(warmup=100, max_iters=2000, base_lr=1e-3)
 
     train_loader, val_loader, test_loader = _build_reverse_dataloaders(num_categories=10, min_seq_len=2, max_seq_len=16)
 
